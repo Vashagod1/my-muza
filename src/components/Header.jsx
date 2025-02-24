@@ -30,7 +30,9 @@ export default function Header() {
                     <ul className="header__nav__list">
                         {links.map((link) => (
                             <li key={link.id}>
-                                <NavLink className="header__nav__list__link" activeClassName="active" to={link.link}>
+                                <NavLink className="header__nav__list__link" style={({isActive}) => ({
+                                    borderBottom: isActive && "3px solid #DC7000",
+                                })} to={link.link}>
                                     {link.label}
                                 </NavLink>
                             </li>
@@ -49,6 +51,7 @@ export default function Header() {
                     )}
                 </div>
                 <button className="header__profile">Профиль</button>
+
             </header>
         </div>
 
