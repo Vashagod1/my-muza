@@ -8,6 +8,7 @@
     background: var(--second-background);
     border-bottom: 1px solid var(--color-dark-15);
     padding: rem(10);
+    margin-bottom: rem(60);
 
     svg {
       fill: none;
@@ -56,6 +57,7 @@
       }
     }
     &__list__link {
+      display: flex;
       text-decoration: none;
       font-size: rem(20);
       color: var(--color-dark-40);
