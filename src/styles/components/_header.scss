@@ -3,16 +3,17 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   &-wrapper {
     background: var(--second-background);
+    border-bottom: 1px solid var(--color-dark-15);
+    padding: rem(10);
 
     svg {
       fill: none;
-      margin: 0 1px;
-      width: 23px;
-      height: 23px;
+      margin: 0 rem(1);
+      width: rem(20);
+      height: rem(20);
       color: #F1F1F1;
     }
   }
@@ -23,17 +24,22 @@
     font-size: rem(25);
     margin-right: rem(50);
 
-    &__title {
-      display: flex;
+    &__link {
+      text-decoration: none;
+      display: inline-flex;
       align-items: center;
-      width: fit-content;
+      margin-right: rem(10);
+
+      &:hover {
+        color: #F1F1F1;
+      }
     }
 
     svg {
       fill: none;
       margin: 0 1px;
-      width: 30px;
-      height: 30px;
+      width: rem(30);
+      height: rem(30);
     }
   }
 
@@ -43,23 +49,61 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      color: var(--text-color);
 
       li {
-        margin-right: 40px;
+        margin-right: rem(40);
         list-style-type: none;
-
-        &:hover {
-          background-color: transparent;
-          text-decoration: none;
-        }
-      }
-
-      &__link {
-        text-decoration: none;
-        color: var(--color-link);
-        font-size: rem(20);
       }
     }
+    &__list__link {
+      text-decoration: none;
+      font-size: rem(20);
+      color: var(--color-dark-40);
+
+      &:hover {
+        color: var(--color-active);
+      }
+
+      &.active {
+        color: var(--text-color);
+      }
+    }
+  }
+
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .search-icon {
+      cursor: pointer;
+      margin-left: rem(10);
+    }
+
+    .search-input {
+      background: var(--second-background);
+      position: absolute;
+      left: rem(40);
+      top: 50%;
+      transform: translateY(-50%);
+      padding: rem(5) rem(10);
+      border: rem(1) solid #666666;
+      border-radius: rem(5);
+      outline: none;
+      color: #F1F1F1;
+      width: rem(250);
+    }
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    border-style: none;
+    margin-left: rem(450);
+    padding: rem(5) rem(20);
+    background-color: var(--second-background);
+    cursor: pointer;
+    font-size: rem(20);
+    color: var(--text-color);
   }
 }

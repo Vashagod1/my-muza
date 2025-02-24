@@ -1,8 +1,8 @@
 @use 'helpers/index' as *;
 
 :root {
-  --color-background: #141414;
-  --second-background: #181818;
+  --color-background: #121212;
+  --second-background: #121212;
 
   --color-input-background: #F1F1F1;
   --color-hr-gray: lightgray;
@@ -23,6 +23,8 @@
   --text-color: #E0E0E0;
 
   --accent-object: #1DB954;
+
+  --color-active: #6A5ACD;
 
   --container-width: #{rem(1250)};
   @include laptop {
