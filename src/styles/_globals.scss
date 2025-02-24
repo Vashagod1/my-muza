@@ -1,0 +1,36 @@
+@use 'helpers/index' as *;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.wrapper {
+  background: var(--color-background);
+}
+
+a {
+  color: inherit;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed var(--color-light);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+  }
+}
