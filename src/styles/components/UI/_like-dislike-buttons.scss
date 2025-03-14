@@ -1,0 +1,30 @@
+.like-buttons{
+  display: flex;
+
+
+  svg{
+    fill: none;
+    width: 24px;
+    height: 24px;
+
+    &:active{
+      fill: var(--color-accent);
+    }
+  }
+
+  &__like,
+  &__dislike,
+  &__share,
+  &__plus{
+    background: none;
+    border: none;
+    z-index: 10;
+    fill: var(--color-accent);
+    color: var(--color-dark-40);
+
+    &:hover{
+      color: var(--color-white)
+    }
+  }
+
+}

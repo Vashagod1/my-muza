@@ -1,5 +1,6 @@
 import '../styles/components/_playlists.scss'
 import { playlists } from '/public/data/playlists.js'
+import LikeDislikeButtons from "./UI/LikeDislikeButtons";
 
 export default function MusicList() {
     return (
@@ -17,7 +18,7 @@ export default function MusicList() {
                             <h3 className="playlists__item__description__title">{playlist.title}</h3>
                             <h4 className="playlists__item__description__subtitle">{playlist.author}</h4>
                         </div>
-
+                        <LikeDislikeButtons/>
                     </div>
                 ))}
             </div>
