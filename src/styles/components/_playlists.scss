@@ -1,0 +1,48 @@
+@use '../helpers/index' as *;
+
+.playlists {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--text-color);
+  gap: rem(20);
+  justify-content: space-around;
+  flex-direction: column;
+
+
+  &__item{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: rem(1);
+    gap: rem(10);
+
+    &:hover{
+      border: 1px solid var(--color-active);
+      cursor: pointer;
+      border-radius: rem(21);
+      padding: rem(4);
+    }
+
+    &__description{
+
+      &__title{
+        font-size: rem(16);
+        font-weight: 700;
+      }
+      &__subtitle{
+        font-size: rem(16);
+        font-weight: 500;
+        color: var(--color-dark-40);
+      }
+    }
+
+    &__cover{
+      width: rem(100);
+      height: rem(100);
+      object-fit: cover;
+      border-radius: rem(20);
+
+    }
+  }
+}

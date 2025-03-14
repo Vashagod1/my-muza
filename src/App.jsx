@@ -1,8 +1,9 @@
 import "/src/styles/main.css"
 import Header from "./components/Header.jsx";
 import {Routes, Route} from "react-router-dom";
-import AboutUs from "./pages/AboutUs.jsx";
 import Home from "./pages/Home.jsx";
+import Library from "./pages/Library";
+import Playlists from "./pages/Playlists";
 
 export default function App() {
     return (
@@ -12,7 +13,8 @@ export default function App() {
             <div className="container">
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/about-us" element={<AboutUs/>}/>
+                    <Route path="/library" element={<Library/>}/>
+                    <Route path="/playlist" element={<Playlists/>}/>
                 </Routes>
             </div>
         </div>

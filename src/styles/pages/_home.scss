@@ -1,14 +1,1 @@
 @use '../helpers/index' as *;
-
-.hero{
-
-  &__container{
-    background-color: var(--color-dark-15);
-
-    &__title{
-      font-weight: 800;
-      font-size: rem(60);
-
-    }
-  }
-}
