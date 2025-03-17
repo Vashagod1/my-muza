@@ -1,30 +1,28 @@
-.like-buttons{
+.like-buttons {
   display: flex;
 
-
-  svg{
-    fill: none;
-    width: 24px;
-    height: 24px;
-
-    &:active{
-      fill: var(--color-accent);
-    }
-  }
-
-  &__like,
-  &__dislike,
-  &__share,
-  &__plus{
+  button {
     background: none;
     border: none;
     z-index: 10;
-    fill: var(--color-accent);
     color: var(--color-dark-40);
+    height: 24px;
+    width: fit-content;
 
-    &:hover{
-      color: var(--color-white)
+    &:hover {
+      color: var(--color-white);
     }
+
+    svg {
+      width: fit-content;
+      height: fit-content;
+      fill: none;
+    }
+  }
+
+  .like-buttons__like:active svg{
+    color: var(--color-active);
+    fill: var(--color-active);
   }
 
 }

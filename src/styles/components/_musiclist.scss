@@ -4,9 +4,9 @@
   display: flex;
   flex-wrap: wrap;
   color: var(--text-color);
-  gap: rem(20);
   justify-content: space-around;
   flex-direction: column;
+  margin-bottom: rem(10);
 
   &__title{
     font-size: rem(50);
@@ -23,6 +23,7 @@
     border: 1px solid transparent;
     padding: rem(1);
     gap: rem(1);
+    width: rem(600);
 
     &:hover{
       box-shadow: 0 0 rem(20) var(--color-active);

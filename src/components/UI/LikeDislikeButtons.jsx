@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { Heart } from 'lucide-react';
-import { Ban } from 'lucide-react';
-import { Share } from 'lucide-react';
-import { Plus } from 'lucide-react';
+import { Heart, Ban, Share, Plus, Play } from "lucide-react";
 
-export default function LikeDislikeButtons() {
+export default function LikeDislikeButtons({ playlist, setCurrentTrack }) {
     const [like, setLike] = useState(false);
     const [dislike, setDislike] = useState(false);
 
@@ -26,19 +23,25 @@ export default function LikeDislikeButtons() {
                 className={`like-buttons__like ${like ? "active" : ""}`}
                 onClick={handleLike}
             >
-                <Heart/>
+                <Heart className="like-buttons__icon" />
             </button>
-            <button
-                className="like-buttons__plus"><Plus/>
+            <button className="like-buttons__plus">
+                <Plus />
             </button>
-            <button
-                className="like-buttons__share"><Share/>
+            <button className="like-buttons__share">
+                <Share />
             </button>
             <button
                 className={`like-buttons__dislike ${dislike ? "active" : ""}`}
                 onClick={handleDislike}
             >
-                <Ban/>
+                <Ban />
+            </button>
+            <button
+                className="like-buttons__play"
+                onClick={() => setCurrentTrack(playlist)}
+            >
+                <Play />
             </button>
         </div>
     );

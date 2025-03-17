@@ -1,28 +1,15 @@
 import Banner from "../components/Banner";
-import MusicList from "../components/MusicList";
+import MusicListSection from "../components/MusicListSection";
+
 
 export default function Home() {
+
     return (
         <>
             <Banner/>
-            <MusicList/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus facilis fugiat, fugit hic ipsa quia
-            voluptate! Accusamus animi deleniti doloremque eius esse facere ipsam minima molestias soluta. Ab accusamus
-            adipisci, aliquam aliquid debitis doloremque dolores earum, eius est fuga magnam molestias omnis quisquam
-            quod sint, sit voluptas. Architecto facere itaque quae quos! Aliquid atque blanditiis consequatur corporis
-            culpa excepturi iste itaque iusto laborum nobis omnis porro quibusdam quis repellendus, reprehenderit
-            voluptas voluptates. Ab, adipisci autem consectetur debitis dicta eum ex fugit labore laboriosam laborum
-            necessitatibus nulla praesentium provident quo rem repudiandae voluptas voluptatum. A aliquid atque commodi
-            consectetur cumque deserunt dolorum, eligendi enim error et excepturi exercitationem facilis fuga hic illum
-            inventore minus modi nulla numquam officia quae quam quo, ratione sint tempore tenetur, totam veniam vero
-            voluptatem voluptatibus! Alias animi commodi cum fugiat illo, iusto libero nihil, quisquam repudiandae
-            soluta sunt temporibus vero voluptatem! Adipisci ducimus enim facere minima, natus quo? A consequuntur
-            deserunt dignissimos laboriosam quasi? Alias animi aperiam architecto consectetur corporis culpa earum error
-            illo iste mollitia natus nisi officia provident, quam ratione sed tenetur voluptate! A ab animi, consequatur
-            cupiditate delectus dolorem dolores expedita inventore maiores nam nulla, quae quibusdam quos reprehenderit
-            sit tempora tenetur ullam.
-
+            <MusicListSection />
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, deserunt earum et explicabo in iusto molestiae, nemo quas quod ratione repellendus repudiandae similique tenetur. Aliquid commodi distinctio dolores ea esse et, eveniet ipsa, neque odio qui recusandae reprehenderit. Aspernatur commodi fugit mollitia, nostrum provident ratione saepe soluta vel? Aliquid assumenda, autem dolores facere harum laborum nisi pariatur quia. Aperiam consequuntur dolorem dolores non odio praesentium quis rem ullam voluptas voluptates! Iusto nisi omnis rem. Aliquam, at corporis cupiditate eos excepturi harum labore sint tempore ut! Autem dolore excepturi possimus quidem repellendus reprehenderit sapiente vitae voluptas! Expedita harum laborum sed! Aliquid architecto at aut consequuntur cumque deleniti eaque est facere facilis harum id illum incidunt iste itaque iure, magnam magni mollitia nam nemo nesciunt porro possimus praesentium provident quaerat quibusdam quis quisquam recusandae repellat reprehenderit repudiandae rerum sed sint soluta, totam, vel veniam voluptatem? Adipisci alias amet animi at atque, commodi corporis cum deserunt dolorem doloremque doloribus est, eveniet fugiat hic ipsam laborum minus perferendis possimus quo repellat, repellendus rerum tenetur ullam? Aliquid aspernatur quos repellendus sed temporibus ut. A atque debitis dolorem fuga mollitia qui tenetur. Aliquam eos esse exercitationem ipsam nobis, porro suscipit voluptatem voluptatum! Laudantium numquam odit optio.
         </>
     );
 }
