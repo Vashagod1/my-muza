@@ -416,51 +416,72 @@ button[aria-label] {
   transform: scale(1.3) translateY(1px);
 }
 
-.playlists {
+.music-list-section {
   display: flex;
-  flex-wrap: wrap;
-  color: var(--text-color);
-  justify-content: space-around;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: var(--text-color);
   margin-bottom: 0.625rem;
 }
-.playlists__title {
+.music-list-section .playlists__title {
   font-size: 3.125rem;
   font-weight: 800;
   text-align: center;
   margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
-.playlists__item {
+.music-list-section .playlists__columns {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 75rem;
+  padding: 0 1rem;
+}
+.music-list-section .playlists__columns {
+  max-width: 75rem;
+  padding: 0 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.music-list-section .playlists__item {
   display: flex;
   align-items: center;
-  text-align: center;
+  padding: 1rem;
   border: 1px solid transparent;
-  padding: 0.0625rem;
-  gap: 0.0625rem;
-  width: 37.5rem;
+  border-radius: 1.3125rem;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  width: 35.375rem;
 }
-.playlists__item:hover {
+.music-list-section .playlists__item:hover {
   box-shadow: 0 0 1.25rem var(--color-active);
   cursor: pointer;
-  border-radius: 1.3125rem;
+  border-color: var(--color-active);
 }
-.playlists__item__description {
+.music-list-section .playlists__item__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 12.5rem;
 }
-.playlists__item__description__title {
+.music-list-section .playlists__item__description__title {
   font-size: 1rem;
   font-weight: 700;
+  margin: 0;
 }
-.playlists__item__description__subtitle {
+.music-list-section .playlists__item__description__subtitle {
   font-size: 1rem;
   font-weight: 500;
   color: var(--color-dark-40);
+  margin: 0;
 }
-.playlists__item__cover {
-  width: 6.25rem;
-  height: 6.25rem;
+.music-list-section .playlists__item__cover {
+  width: 5.625rem;
+  height: 5.625rem;
   object-fit: cover;
   border-radius: 1.25rem;
+  flex-shrink: 0;
 }
 
 .like-buttons {
@@ -471,16 +492,13 @@ button[aria-label] {
   border: none;
   z-index: 10;
   color: var(--color-dark-40);
-  height: 24px;
-  width: fit-content;
 }
 .like-buttons button:hover {
   color: var(--color-white);
 }
 .like-buttons button svg {
-  width: fit-content;
-  height: fit-content;
   fill: none;
+  width: 1.875rem;
 }
 .like-buttons .like-buttons__like:active svg {
   color: var(--color-active);

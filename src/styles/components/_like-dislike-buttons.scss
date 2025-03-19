@@ -1,3 +1,5 @@
+@use '../helpers/functions' as *;
+
 .like-buttons {
   display: flex;
 
@@ -6,17 +8,14 @@
     border: none;
     z-index: 10;
     color: var(--color-dark-40);
-    height: 24px;
-    width: fit-content;
 
     &:hover {
       color: var(--color-white);
     }
 
     svg {
-      width: fit-content;
-      height: fit-content;
       fill: none;
+      width: rem(30);
     }
   }
 

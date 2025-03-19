@@ -1,56 +1,78 @@
 @use '../helpers/index' as *;
 
-.playlists {
+.music-list-section {
   display: flex;
-  flex-wrap: wrap;
-  color: var(--text-color);
-  justify-content: space-around;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: var(--text-color);
   margin-bottom: rem(10);
 
-  &__title{
+  .playlists__title {
     font-size: rem(50);
     font-weight: 800;
     text-align: center;
     margin-top: rem(20);
+    margin-bottom: rem(20);
   }
 
+  .playlists__columns {
+    display: flex;
+    gap: rem(32);
+    justify-content: center;
+    max-width: rem(1200);
+    padding: 0 rem(16);
+  }
 
-  &__item{
+  .playlists__columns {
+    max-width: rem(1200);
+    padding: 0 rem(16);
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .playlists__item {
     display: flex;
     align-items: center;
-    text-align: center;
+    padding: rem(16);
     border: 1px solid transparent;
-    padding: rem(1);
-    gap: rem(1);
-    width: rem(600);
+    border-radius: rem(21);
+    gap: rem(16);
+    transition: all 0.3s ease;
+    width: rem(566);
 
-    &:hover{
+    &:hover {
       box-shadow: 0 0 rem(20) var(--color-active);
       cursor: pointer;
-      border-radius: rem(21);
+      border-color: var(--color-active);
     }
 
-    &__description{
+    &__description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       width: rem(200);
 
-      &__title{
+      &__title {
         font-size: rem(16);
         font-weight: 700;
+        margin: 0;
       }
-      &__subtitle{
+
+      &__subtitle {
         font-size: rem(16);
         font-weight: 500;
         color: var(--color-dark-40);
+        margin: 0;
       }
     }
 
-    &__cover{
-      width: rem(100);
-      height: rem(100);
+    &__cover {
+      width: rem(90);
+      height: rem(90);
       object-fit: cover;
       border-radius: rem(20);
-
+      flex-shrink: 0;
     }
   }
 }
