@@ -2,6 +2,8 @@
 
 .like-buttons {
   display: flex;
+  opacity: 0;
+  margin-left: rem(20);
 
   button {
     background: none;

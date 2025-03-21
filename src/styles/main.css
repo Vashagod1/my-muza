@@ -183,6 +183,7 @@ svg * {
   --color-dark-15: #262626;
   --color-dark-20: #333333;
   --color-dark-40: #666666;
+  --color-dark-50: #818181;
   --color-logo: #ffff;
   --color-placeholder: #9ca3af;
   --transition-duration: 0.2s;
@@ -191,6 +192,7 @@ svg * {
   --text-color-dark: #ff0000;
   --accent-object: #1DB954;
   --color-active: #6A5ACD;
+  --color-second-active: #3A4C7A;
   --container-width: 78.125rem;
 }
 @media (width <= 90.06125rem) {
@@ -428,36 +430,34 @@ button[aria-label] {
   font-size: 3.125rem;
   font-weight: 800;
   text-align: center;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin: 1.25rem 0;
 }
 .music-list-section .playlists__columns {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-  justify-content: center;
   max-width: 75rem;
-  padding: 0 1rem;
-}
-.music-list-section .playlists__columns {
-  max-width: 75rem;
-  padding: 0 1rem;
-  justify-content: space-between;
+  height: 56.25rem;
   flex-wrap: wrap;
 }
 .music-list-section .playlists__item {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 1rem;
   border: 1px solid transparent;
   border-radius: 1.3125rem;
   gap: 1rem;
-  transition: all 0.3s ease;
   width: 35.375rem;
+  transition: all 0.3s ease;
 }
 .music-list-section .playlists__item:hover {
-  box-shadow: 0 0 1.25rem var(--color-active);
+  box-shadow: 0 0 1.25rem var(--color-second-active);
   cursor: pointer;
-  border-color: var(--color-active);
+  border-color: var(--color-second-active);
+}
+.music-list-section .playlists__item:hover .like-buttons {
+  opacity: 1 !important;
 }
 .music-list-section .playlists__item__description {
   display: flex;
@@ -465,16 +465,48 @@ button[aria-label] {
   justify-content: space-between;
   width: 12.5rem;
 }
-.music-list-section .playlists__item__description__title {
+.music-list-section .playlists__item__description__title, .music-list-section .playlists__item__description__subtitle {
   font-size: 1rem;
-  font-weight: 700;
   margin: 0;
 }
+.music-list-section .playlists__item__description__title {
+  font-weight: 700;
+}
 .music-list-section .playlists__item__description__subtitle {
+  font-weight: 500;
+  color: var(--color-dark-40);
+}
+.music-list-section .playlists__item__controls {
+  position: relative;
+  margin-left: auto;
+  min-width: 5rem;
+  text-align: right;
+}
+.music-list-section .playlists__item__length {
   font-size: 1rem;
   font-weight: 500;
   color: var(--color-dark-40);
-  margin: 0;
+  transition: opacity 0.3s ease;
+}
+.music-list-section .playlists__item .like-buttons {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-43%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  gap: 0.5rem;
+}
+.music-list-section .playlists__item:hover .playlists__item__length {
+  opacity: 0;
+}
+.music-list-section .playlists__item:hover .like-buttons {
+  opacity: 1;
+}
+.music-list-section .playlists__item__cover-container {
+  position: relative;
+  display: inline-block;
 }
 .music-list-section .playlists__item__cover {
   width: 5.625rem;
@@ -482,10 +514,41 @@ button[aria-label] {
   object-fit: cover;
   border-radius: 1.25rem;
   flex-shrink: 0;
+  transition: filter 0.3s ease;
+}
+.music-list-section .playlists__item__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.875rem;
+  color: white;
+  background: var(--color-active);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.music-list-section .playlists__item__play-btn:hover {
+  opacity: 1;
+}
+.music-list-section .playlists__item:hover .playlists__item__cover {
+  filter: brightness(0.5);
+}
+.music-list-section .playlists__item:hover .playlists__item__play-btn {
+  opacity: 1;
 }
 
 .like-buttons {
   display: flex;
+  opacity: 0;
+  margin-left: 1.25rem;
 }
 .like-buttons button {
   background: none;
@@ -503,6 +566,98 @@ button[aria-label] {
 .like-buttons .like-buttons__like:active svg {
   color: var(--color-active);
   fill: var(--color-active);
+}
+
+.set-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.set-section__title {
+  font-size: 3.125rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 1.25rem 0;
+}
+.set-section__columns {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 25rem;
+  height: 56.25rem;
+  flex-wrap: wrap;
+}
+.set-section .set__playlist {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--color-dark-40);
+  margin-left: 0.9375rem;
+  cursor: pointer;
+}
+.set-section .set__playlist__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 18.75rem;
+}
+.set-section .set__playlist__description__title, .set-section .set__playlist__description__subtitle {
+  font-size: 1rem;
+  margin: 0;
+}
+.set-section .set__playlist__description__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.set-section .set__playlist__description__subtitle {
+  font-weight: 400;
+  margin-bottom: 0.1875rem;
+}
+.set-section .set__playlist__description__subtitle:hover {
+  color: var(--color-active);
+}
+.set-section .set__playlist__cover {
+  width: 25rem;
+  height: 19.6875rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  position: relative;
+}
+.set-section .set__playlist__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.875rem;
+  color: white;
+  background: var(--color-active);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.set-section .set__playlist__play-btn:hover {
+  opacity: 1;
+}
+.set-section .set__playlist__controls {
+  display: flex;
+}
+.set-section .set__playlist__controls__icon {
+  fill: none;
+  width: 1.3125rem;
+  height: 1.3125rem;
+}
+.set-section .set__playlist__controls__num {
+  margin-left: 0.25rem;
+  transform: translateY(-2%);
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -12,6 +12,7 @@
   --color-dark-15: #262626;
   --color-dark-20: #333333;
   --color-dark-40: #666666;
+  --color-dark-50: #818181;
 
   --color-logo: #ffff;
 
@@ -27,6 +28,7 @@
   --accent-object: #1DB954;
 
   --color-active: #6A5ACD;
+  --color-second-active: #3A4C7A;
 
   --container-width: #{rem(1250)};
   @include laptop {

@@ -3,7 +3,6 @@ import Header from "./components/Header.jsx";
 import {Routes, Route} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Library from "./pages/Library";
-import Playlists from "./pages/Playlists";
 
 export default function App() {
     return (
@@ -14,7 +13,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/library" element={<Library/>}/>
-                    <Route path="/playlist" element={<Playlists/>}/>
+                    {/*<Route path="/playlist" element={<Playlists/>}/>*/}
                 </Routes>
             </div>
         </div>
