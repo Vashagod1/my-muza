@@ -1,0 +1,24 @@
+  @use '../helpers/index' as *;
+
+  .footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: rem(15) rem(5);
+    text-align: center;
+
+    &__content {
+
+      &__contacts {
+        color: var(--color-dark-40);
+
+        &__copy{
+          font-weight: 600;
+        }
+
+        &__mail{
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }

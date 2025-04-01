@@ -193,6 +193,7 @@ svg * {
   --accent-object: #1DB954;
   --color-active: #6A5ACD;
   --color-second-active: #3A4C7A;
+  --color-gray: #D3D3D3;
   --container-width: 78.125rem;
 }
 @media (width <= 90.06125rem) {
@@ -221,7 +222,7 @@ svg * {
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--text-color);
 }
 
@@ -291,18 +292,18 @@ button[aria-label] {
   display: flex;
   align-items: center;
 }
-.header-wrapper {
+.header__wrapper {
   background: var(--second-background);
-  border-bottom: 1px solid var(--color-dark-15);
+  border-bottom: 0.0625rem solid var(--color-dark-15);
   padding: 0.625rem;
   margin-bottom: 3.75rem;
 }
-.header-wrapper svg {
+.header__wrapper svg {
   fill: none;
   margin: 0 0.0625rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  color: #F1F1F1;
+  width: 1.875rem;
+  height: 1.875rem;
+  color: var(--color-white);
 }
 .header__logo {
   color: var(--color-logo);
@@ -310,75 +311,61 @@ button[aria-label] {
   font-size: 1.5625rem;
   margin-right: 3.125rem;
 }
-.header__logo__link {
+.header__link {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   margin-right: 0.625rem;
 }
-.header__logo__link:hover {
-  color: #F1F1F1;
+.header__link:hover {
+  color: var(--color-white);
 }
-.header__logo svg {
-  fill: none;
-  margin: 0 1px;
-  width: 1.875rem;
-  height: 1.875rem;
+.header__nav {
+  display: flex;
+  margin-right: auto;
 }
-.header__nav__list {
+.header__list {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.header__nav__list li {
+.header__list li {
   margin-right: 2.5rem;
-  list-style-type: none;
 }
-.header__nav__list__link {
+.header__nav-link {
   display: flex;
   text-decoration: none;
   font-size: 1.25rem;
   color: var(--color-dark-40);
 }
-.header__nav__list__link:hover {
+.header__nav-link:hover {
   color: var(--color-active);
 }
-.header__nav__list__link.active {
+.header__nav-link.active {
   color: var(--text-color);
 }
 .header__search {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-.header__search .search-icon {
+.header__search-icon {
   cursor: pointer;
   margin-left: 0.625rem;
 }
-.header__search .search-input {
+.header__search-input {
   background: var(--second-background);
   position: absolute;
-  left: 2.5rem;
+  right: 2.5rem;
   top: 50%;
   transform: translateY(-50%);
   padding: 0.3125rem 0.625rem;
-  border: 0.0625rem solid #666666;
+  border: 0.0625rem solid var(--color-gray);
   border-radius: 0.3125rem;
   outline: none;
-  color: #F1F1F1;
-  width: 15.625rem;
-}
-.header__profile {
-  display: flex;
-  align-items: center;
-  border-style: none;
-  margin-left: 28.125rem;
-  padding: 0.3125rem 1.25rem;
-  background-color: var(--second-background);
-  cursor: pointer;
-  font-size: 1.25rem;
-  color: var(--text-color);
+  width: 18.75rem;
 }
 
 .banner {
@@ -403,6 +390,7 @@ button[aria-label] {
   letter-spacing: 0.5px;
 }
 .banner__play {
+  display: flex;
   font-weight: 500;
   font-size: 1.25rem;
   margin-top: 1.25rem;
@@ -413,9 +401,23 @@ button[aria-label] {
   transform-origin: center;
   border: 1px solid var(--color-dark-40);
   border-radius: 1.25rem;
+  text-align: center;
+  align-items: center;
+  margin-left: 1.25rem;
 }
 .banner__play:hover {
   transform: scale(1.3) translateY(1px);
+}
+.banner__play__icon {
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+}
+.banner__play__caption {
+  margin-left: 0.3125rem;
+  display: flex;
+  text-align: center;
 }
 
 .music-list-section {
@@ -424,7 +426,6 @@ button[aria-label] {
   align-items: center;
   width: 100%;
   color: var(--text-color);
-  margin-bottom: 0.625rem;
 }
 .music-list-section .playlists__title {
   font-size: 3.125rem;
@@ -445,7 +446,7 @@ button[aria-label] {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border: 1px solid transparent;
+  border: 0.0625rem solid transparent;
   border-radius: 1.3125rem;
   gap: 1rem;
   width: 35.375rem;
@@ -522,7 +523,7 @@ button[aria-label] {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.875rem;
-  color: white;
+  color: var(--color-gray);
   background: var(--color-active);
   border: none;
   border-radius: 50%;
@@ -533,10 +534,10 @@ button[aria-label] {
   justify-content: center;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease; /* Добавьте transition для плавного изменения цвета */
 }
-.music-list-section .playlists__item__play-btn:hover {
-  opacity: 1;
+.music-list-section .playlists__item .playlists__item__play-btn:hover {
+  color: #FFFFFF;
 }
 .music-list-section .playlists__item:hover .playlists__item__cover {
   filter: brightness(0.5);
@@ -568,96 +569,186 @@ button[aria-label] {
   fill: var(--color-active);
 }
 
+/*Section*/
 .set-section {
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 .set-section__title {
   font-size: 3.125rem;
   font-weight: 800;
-  text-align: center;
-  margin: 1.25rem 0;
+  z-index: 1;
+  text-align: left;
 }
-.set-section__columns {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 25rem;
-  height: 56.25rem;
-  flex-wrap: wrap;
+.set-section .swiper {
+  width: 100%;
+  max-width: 93.75rem;
+  padding-bottom: 1.875rem;
 }
-.set-section .set__playlist {
+.set-section .swiper-wrapper {
   display: flex;
-  position: relative;
-  flex-direction: column;
-  gap: 2rem;
-  color: var(--color-dark-40);
-  margin-left: 0.9375rem;
-  cursor: pointer;
+  flex-direction: row !important;
 }
-.set-section .set__playlist__description {
+.set-section .swiper-slide {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  width: 18.75rem;
+  align-items: center;
 }
-.set-section .set__playlist__description__title, .set-section .set__playlist__description__subtitle {
-  font-size: 1rem;
-  margin: 0;
+.set-section .swiper-pagination-bullet {
+  background: var(--color-active);
 }
-.set-section .set__playlist__description__title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--text-color);
+.set-section .swiper-button-prev,
+.set-section .swiper-button-next {
+  color: var(--color-text);
 }
-.set-section .set__playlist__description__subtitle {
-  font-weight: 400;
-  margin-bottom: 0.1875rem;
+
+/*PlaylistsHome*/
+.set-playlist {
+  padding: 0.625rem;
+  border: solid 0.1875rem transparent;
 }
-.set-section .set__playlist__description__subtitle:hover {
-  color: var(--color-active);
+.set-playlist:hover {
+  border-color: var(--color-active);
 }
-.set-section .set__playlist__cover {
-  width: 25rem;
-  height: 19.6875rem;
+.set-playlist__container {
+  position: relative;
+  display: inline-block;
+}
+.set-playlist__cover {
+  aspect-ratio: 400/300;
   object-fit: cover;
   flex-shrink: 0;
-  position: relative;
+  width: 100%;
+  border-radius: 0.5rem;
 }
-.set-section .set__playlist__play-btn {
+.set-playlist__play-button {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.875rem;
-  color: white;
-  background: var(--color-active);
+  top: 50%;
+  transform: translate(-40%, -140%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.set-playlist__play-button__play-btn {
   border: none;
   border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3.125rem;
+  height: 3.125rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  background: var(--color-active);
+  transform-origin: center;
 }
-.set-section .set__playlist__play-btn:hover {
+.set-playlist__play-button__play-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-gray);
+}
+.set-playlist__play-button__play-btn:hover {
+  transform: scale(1.5);
+}
+.set-playlist__play-button__play-btn:hover svg {
+  color: var(--color-white);
+}
+.set-playlist:hover .set-playlist__play-button__play-btn {
   opacity: 1;
 }
-.set-section .set__playlist__controls {
+.set-playlist__description {
+  margin-top: 0.625rem;
+}
+.set-playlist__description__title {
+  font-weight: 500;
+}
+.set-playlist__description__subtitle {
+  color: var(--color-dark-40);
+}
+.set-playlist__info {
+  display: flex;
+  color: var(--color-dark-40);
+  margin-top: 0.3125rem;
+  width: 6.25rem;
+  text-align: center;
+  align-items: center;
+}
+.set-playlist__info__icon {
+  display: flex;
+  width: 1.0625rem;
+  height: 1.0625rem;
+  text-align: center;
+  align-items: center;
+}
+.set-playlist__info__num {
+  margin-left: 0.1875rem;
   display: flex;
 }
-.set-section .set__playlist__controls__icon {
-  fill: none;
-  width: 1.3125rem;
-  height: 1.3125rem;
+
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 0.9375rem 0.3125rem;
+  text-align: center;
 }
-.set-section .set__playlist__controls__num {
-  margin-left: 0.25rem;
-  transform: translateY(-2%);
+.footer__content__contacts {
+  color: var(--color-dark-40);
+}
+.footer__content__contacts__copy {
+  font-weight: 600;
+}
+.footer__content__contacts__mail {
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+  height: 1.875rem;
+}
+.profile-dropdown__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+.profile-dropdown__menu {
+  position: absolute;
+  list-style: none;
+  background: #222;
+  top: 150%;
+  right: -200%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  z-index: 10;
+  min-width: 16.875rem;
+}
+.profile-dropdown__menu li {
+  display: flex;
+  align-items: center;
+}
+.profile-dropdown .profile-dropdown__menu li a,
+.profile-dropdown .profile-dropdown__menu li button {
+  width: 100%;
+  display: block;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--color-white);
+  text-align: left;
+  padding: 0.625rem 0.9375rem;
+}
+.profile-dropdown .profile-dropdown__menu li a:hover,
+.profile-dropdown .profile-dropdown__menu li button:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /*# sourceMappingURL=main.css.map */

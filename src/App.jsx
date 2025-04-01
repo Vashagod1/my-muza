@@ -3,6 +3,8 @@ import Header from "./components/Header.jsx";
 import {Routes, Route} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Library from "./pages/Library";
+import Footer from "./components/Footer";
+import Profile from "./components/Profile";
 
 export default function App() {
     return (
@@ -13,9 +15,13 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/library" element={<Library/>}/>
-                    {/*<Route path="/playlist" element={<Playlists/>}/>*/}
+                    <Route path="/profile" element={<Profile/>}/>
                 </Routes>
+
+
             </div>
+
+            <Footer/>
         </div>
     )
 }

@@ -1,0 +1,50 @@
+@use "../helpers/index" as *;
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+  height: rem(30);
+
+  &__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: rem(20);
+  }
+
+  &__menu {
+    position: absolute;
+    list-style: none;
+    background: #222;
+    top: 150%;
+    right: -200%;
+    border-radius: rem(8);
+    box-shadow: 0 rem(4) rem(8) 0 rgba(0, 0, 0, 0.2);
+    padding: rem(8);
+    z-index: 10;
+    min-width: rem(270);
+  }
+
+  &__menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  .profile-dropdown__menu li a,
+  .profile-dropdown__menu li button {
+    width: 100%;
+    display: block;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--color-white);
+    text-align: left;
+    padding: rem(10) rem(15);
+  }
+
+  .profile-dropdown__menu li a:hover,
+  .profile-dropdown__menu li button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
