@@ -1,7 +1,10 @@
-import { useRef, useState } from 'react';
-import { AudioPlayerContext } from "./useAudioPlayer";
+import { createContext, useContext, useRef, useState } from 'react';
 
-export default function AudioPlayerProvider({ children }) {
+const AudioPlayerContext = createContext(null);
+
+export const useAudioPlayer = () => useContext(AudioPlayerContext);
+
+export default function AudioPlayerProvider({children}) {
     const audioRef = useRef(new Audio());
     const [currentTrack, setCurrentTrack] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -11,11 +14,8 @@ export default function AudioPlayerProvider({ children }) {
             audioRef.current.src = track.src;
             setCurrentTrack(track);
         }
-        audioRef.current.play().then(() => {
-            setIsPlaying(true);
-        }).catch((e) => {
-            console.error("Ошибка воспроизведения:", e);
-        });
+        audioRef.current.play();
+        setIsPlaying(true);
     };
 
     const pause = () => {
@@ -27,18 +27,15 @@ export default function AudioPlayerProvider({ children }) {
         if (isPlaying) {
             pause();
         } else {
-            audioRef.current.play().then(() => {
-                setIsPlaying(true);
-            }).catch((e) => {
-                console.error("Ошибка воспроизведения:", e);
-            });
+            audioRef.current.play();
+            setIsPlaying(true);
         }
     };
 
     return (
-        <AudioPlayerContext.Provider value={{ currentTrack, isPlaying, playTrack, pause, togglePlay }}>
+        <AudioPlayerContext.Provider value={{currentTrack, isPlaying, playTrack, pause, togglePlay}}>
             {children}
-            <audio ref={audioRef} style={{ display: 'none' }} />
+            <audio ref={audioRef} style={{display: "none"}} />
         </AudioPlayerContext.Provider>
-    );
+    )
 }
