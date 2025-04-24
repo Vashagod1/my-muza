@@ -1,14 +1,23 @@
-import { useState } from "react";
 import { Play, Pause } from "lucide-react";
 import "../styles/components/_musiclist.scss";
 import LikeDislikeButtons from "./UI/LikeDislikeButtons";
+import {useAudioPlayer} from "./UI/AudioPlayerContext";
 
-export default function MusicList({ title, author, cover, length, setCurrentTrack }) {
-    const [isPlaying, setIsPlaying] = useState(false);
+export default function MusicList({ id, title, author, cover, length, src}) {
+    const {currentTrack, isPlaying, playTrack, pause} = useAudioPlayer();
+
+    const isCurrentTrack = currentTrack?.id === id;
 
     const handlePlayPause = () => {
-        setIsPlaying(!isPlaying);
-        setCurrentTrack({ title, author, cover });
+        if (isCurrentTrack) {
+            if (isPlaying) {
+                pause();
+            } else {
+                playTrack(currentTrack);
+            }
+        }  else {
+            playTrack({id, title, author, cover, src});
+        }
     };
 
     return (
@@ -23,7 +32,7 @@ export default function MusicList({ title, author, cover, length, setCurrentTrac
                     className="playlists__item__play-btn"
                     onClick={handlePlayPause}
                 >
-                    {isPlaying ? <Pause /> : <Play />}
+                    {isCurrentTrack && isPlaying ? <Pause /> : <Play />}
                 </button>
             </div>
             <div className="playlists__item__description">

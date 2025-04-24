@@ -5,6 +5,8 @@
 @use 'fonts';
 
 @use 'pages/home';
+@use 'pages/favourite';
+@use 'pages/playlist';
 
 @use 'components/header';
 @use 'components/banner';
@@ -13,3 +15,4 @@
 @use 'components/playlistshome';
 @use 'components/footer';
 @use 'components/profiledropdown';
+@use 'components/now-playing';

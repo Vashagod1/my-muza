@@ -1,0 +1,48 @@
+@use '../helpers/functions' as *;
+
+.now-playing {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #222;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.now-playing__cover {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.now-playing__info {
+  flex: 1;
+}
+
+.now-playing__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.now-playing__author {
+  margin: 0;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.now-playing__button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}

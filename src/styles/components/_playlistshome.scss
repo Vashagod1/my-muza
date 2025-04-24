@@ -93,15 +93,11 @@
     svg {
       width: rem(24);
       height: rem(24);
-      color: var(--color-gray);
+      color: var(--color-white);
     }
 
     &:hover {
       transform: scale(1.5);
-    }
-
-    &:hover svg{
-      color: var(--color-white);
     }
   }
 
@@ -117,7 +113,6 @@
     }
 
     &__subtitle{
-
       color: var(--color-dark-40);
     }
   }

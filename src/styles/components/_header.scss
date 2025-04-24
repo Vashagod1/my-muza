@@ -15,7 +15,11 @@
       margin: 0 rem(1);
       width: rem(30);
       height: rem(30);
-      color: var(--color-white);
+      color: var(--color-dark-40);
+
+      &:hover{
+        color: var(--color-white);
+      }
     }
   }
 
@@ -24,18 +28,26 @@
     font-weight: 800;
     font-size: rem(25);
     margin-right: rem(50);
-  }
 
-  &__link {
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    margin-right: rem(10);
+    &__link {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      margin-right: rem(10);
+      color: var(--color-dark-40);
 
-    &:hover {
-      color: var(--color-white);
+      svg {
+        stroke: var(--color-dark-40);
+      }
+
+      &:hover {
+        svg {
+          stroke: var(--color-white);
+        }
+      }
     }
   }
+
 
   &__nav {
     display: flex;

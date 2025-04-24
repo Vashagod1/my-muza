@@ -1,0 +1,42 @@
+@use '../helpers/functions' as *;
+
+.playlist {
+
+
+  &__container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    color: var(--color-dark-40);
+    border-bottom: rem(10);
+  }
+
+  &__cover {
+    flex-shrink: 0;
+  }
+
+  &__cover-img {
+    width: 370px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 0 0 rem(25) rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+  }
+
+  &__text-info{
+    display: flex;
+    flex-direction: column;
+    gap: rem(1);
+  }
+
+  &__title {
+    color: var(--color-white);
+  }
+
+  &__info-num {
+    color: var(--color-dark-40);
+  }
+}
